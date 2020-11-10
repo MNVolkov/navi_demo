@@ -574,7 +574,7 @@ switch (gps_state){
 									 (int) app_data->navi_data.latitude/3000000, 
 									((int) app_data->navi_data.latitude%3000000)/3); 
 			
-			_sprintf(lon, "%c%3d.%.6d",   (app_data->navi_data.ns)==NAVI_WEST_HEMISPHERE?'W':'E',
+			_sprintf(lon, "%c%3d.%.6d",   (app_data->navi_data.ew)==NAVI_WEST_HEMISPHERE?'W':'E',
 									 (int) app_data->navi_data.longitude/3000000, 
 									((int) app_data->navi_data.longitude%3000000)/3);
 			
@@ -739,7 +739,7 @@ log_printf(5, "[%d] [Navi] Time: %02d.%02d.%04d %02d:%02d:%02d; Point: (%c%3d.%.
 			(app_data->navi_data.ns)==NAVI_NORTH_HEMISPHERE?'N':'S',
 	   (int) app_data->navi_data.latitude/3000000, 
 	  ((int) app_data->navi_data.latitude%3000000)/3,
-			(app_data->navi_data.ns)==NAVI_WEST_HEMISPHERE?'W':'E',
+			(app_data->navi_data.ew)==NAVI_WEST_HEMISPHERE?'W':'E',
 	   (int) app_data->navi_data.longitude/3000000, 
 	  ((int) app_data->navi_data.longitude%3000000)/3,
 			 app_data->navi_data.altitude);
@@ -749,7 +749,7 @@ _sprintf(msg, "Координаты %c%3d.%.6d; %c%3d.%.6d; высота: %.1f\n
 			(app_data->navi_data.ns)==NAVI_NORTH_HEMISPHERE?'N':'S',
 	   (int) app_data->navi_data.latitude/3000000, 
 	  ((int) app_data->navi_data.latitude%3000000)/3,
-			(app_data->navi_data.ns)==NAVI_WEST_HEMISPHERE?'W':'E',
+			(app_data->navi_data.ew)==NAVI_WEST_HEMISPHERE?'W':'E',
 	   (int) app_data->navi_data.longitude/3000000, 
 	  ((int) app_data->navi_data.longitude%3000000)/3,
 			 app_data->navi_data.altitude, 

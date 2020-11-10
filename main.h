@@ -55,12 +55,15 @@
 #define ELF_WRITE_OPTION(o,s,m)	ElfWriteSettings(ELF_INDEX_SELF, o, offsetof(s,m), sizeof_member(s,m))
 #define ELF_READ_OPTION(o,s,m)	ElfReadSettings (ELF_INDEX_SELF, o, offsetof(s,m), sizeof_member(s,m))
 
+#pragma pack(push, 1)		//	запретить выравнивание полей структуры
 typedef struct {
 	char sig[4];		//	сигнатура NAVI
 	char save_bat_mode;	//	режим экономии батареи включен
 	char press_units;	//	единицы измерения давления
 	float press_cal;	//	калибровочный коэффициент давления
 } options_;
+#pragma pack(pop)
+
 
 // структура данных для нашего экрана
 struct app_data_ {
